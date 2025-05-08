@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Age Calculator Tool - Calculate your exact age online by entering your date of birth.">
+    <title>Age Calculator</title>
+</head>
+<body>
+    <h1>Free Online Age Calculator</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="dob">Enter your Date of Birth:</label>
+        <input type="date" name="dob" required>
+        <button type="submit">Calculate Age</button>
+    </form>
+
+    {% if age %}
+        <h2>Your Age: {{ age }} years</h2>
+    {% endif %}
+</body>
+</html>
